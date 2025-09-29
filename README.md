@@ -10,7 +10,7 @@
 
 | Live Dashboard Link | GitHub Repository |
 | :--- | :--- |
-| https://grindgraph.streamlit.app/?embed_options=light_theme,dark_theme | [Link to this Repo] |
+| https://grindgraph.streamlit.app/?embed_options=light_theme,dark_theme | (https://github.com/harshithreddy-dev/GrindGraph) |
 
 ---
 
