@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import os
 import plotly.express as px
+from pathlib import Path
 
 # Set the main configuration for the app
 st.set_page_config(
@@ -14,16 +15,38 @@ st.set_page_config(
 @st.cache_data
 def load_data():
     # --- PATHS ---
-    # Adjust these path"s if your project structure is different!
-    folder1 = "../data/mturkfitbit_export_3.12.16-4.11.16/Fitabase Data 3.12.16-4.11.16"
-    folder2 = "../data/mturkfitbit_export_4.12.16-5.12.16/Fitabase Data 4.12.16-5.12.16"
+    # Resolve paths relative to this file to avoid CWD issues on Streamlit Cloud
+    base_dir = Path(__file__).resolve().parent
+    data_root = (base_dir.parent / "data").resolve()
+    folder1 = data_root / "mturkfitbit_export_3.12.16-4.11.16" / "Fitabase Data 3.12.16-4.11.16"
+    folder2 = data_root / "mturkfitbit_export_4.12.16-5.12.16" / "Fitabase Data 4.12.16-5.12.16"
+
+    # Validate folders exist
+    missing_folders = [str(p) for p in [folder1, folder2] if not p.exists()]
+    if missing_folders:
+        st.error(
+            "Data folder(s) not found. Ensure the data directory is in the repository.\n"
+            f"Expected data root: {data_root}\n"
+            "Missing: " + ", ".join(missing_folders)
+        )
+        st.stop()
 
     # --- 1. Load and Merge Activity Data ---
-    df1_activity = pd.read_csv(os.path.join(folder1, "dailyActivity_merged.csv"))
-    df2_activity = pd.read_csv(os.path.join(folder2, "dailyActivity_merged.csv"))
+    file1_activity = folder1 / "dailyActivity_merged.csv"
+    file2_activity = folder2 / "dailyActivity_merged.csv"
+    for f in [file1_activity, file2_activity]:
+        if not f.exists():
+            st.error(
+                "Required activity file not found. Please verify your dataset is committed.\n"
+                f"Missing file: {f}"
+            )
+            st.stop()
+
+    df1_activity = pd.read_csv(file1_activity)
+    df2_activity = pd.read_csv(file2_activity)
     df = pd.concat([df1_activity, df2_activity], ignore_index=True)
     
-    # Data Cleaning and Feature Engineering (Activity)
+    # Data Cleaning and Feature Engineering (activity)
     df.rename(columns={'ActivityDate': 'Date'}, inplace=True)
     df['Date'] = pd.to_datetime(df['Date'])
     df['Weekday'] = df['Date'].dt.day_name()
@@ -32,14 +55,22 @@ def load_data():
     
     try:
         # Load the granular minuteSleep data (using the correct file name you identified)
-        df_sleep1 = pd.read_csv(os.path.join(folder1, "minuteSleep_merged.csv"))
-        df_sleep2 = pd.read_csv(os.path.join(folder2, "minuteSleep_merged.csv"))
+        file1_sleep = folder1 / "minuteSleep_merged.csv"
+        file2_sleep = folder2 / "minuteSleep_merged.csv"
+        if not file1_sleep.exists() or not file2_sleep.exists():
+            missing = [str(p) for p in [file1_sleep, file2_sleep] if not p.exists()]
+            raise FileNotFoundError(
+                "Missing sleep file(s): " + ", ".join(missing) +
+                f". Looked under data root: {data_root}"
+            )
+
+        df_sleep1 = pd.read_csv(file1_sleep)
+        df_sleep2 = pd.read_csv(file2_sleep)
 
         minute_sleep_data = pd.concat([df_sleep1, df_sleep2], ignore_index=True)
 
         # Clean and format the date column
         minute_sleep_data['ActivityDate'] = pd.to_datetime(minute_sleep_data['date']).dt.date
-        
         # Aggregate the minute data to daily totals
         daily_sleep_summary = minute_sleep_data.groupby(['Id', 'ActivityDate']).agg(
             TotalMinutesAsleep=('value', 'sum')
