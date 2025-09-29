@@ -10,7 +10,7 @@
 
 | Live Dashboard Link | GitHub Repository |
 | :--- | :--- |
-| **[INSERT STREAMLIT CLOUD LINK HERE]** | [Link to this Repo] |
+| https://grindgraph.streamlit.app/?embed_options=light_theme,dark_theme | [Link to this Repo] |
 
 ---
 
