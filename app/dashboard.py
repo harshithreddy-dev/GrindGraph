@@ -15,8 +15,8 @@ st.set_page_config(
 def load_data():
     # --- PATHS ---
     # Adjust these path"s if your project structure is different!
-    folder1 = "../data/mturkfitbit_export_3.12.16-4.11.16"
-    folder2 = "../data/mturkfitbit_export_4.12.16-5.12.16"
+    folder1 = "../data/mturkfitbit_export_3.12.16-4.11.16/Fitabase Data 3.12.16-4.11.16"
+    folder2 = "../data/mturkfitbit_export_4.12.16-5.12.16/Fitabase Data 4.12.16-5.12.16"
 
     # --- 1. Load and Merge Activity Data ---
     df1_activity = pd.read_csv(os.path.join(folder1, "dailyActivity_merged.csv"))
