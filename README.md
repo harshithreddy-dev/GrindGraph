@@ -5,7 +5,7 @@
 **GrindGraph** isn't just an app; it's a deep dive into daily hustle data using **Python** and **Streamlit**. We took a raw FitBit dataset, merged a chaotic minute-by-minute sleep log, and delivered **actionable tea** on activity habits, sleep correlation, and calorie burns.
 
 
-|  Live Dashboard (It Slaps) |  GitHub Repo (You Are Here) |
+|  Live Dashboard  |  GitHub Repo  |
 | :--- | :--- |
 | **https://grindgraph.streamlit.app/** | **https://github.com/harshithreddy-dev/GrindGraph** |
 
