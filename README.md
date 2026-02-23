@@ -1,6 +1,4 @@
-# GrindGraph: Visualizing the Fitness Grind (No Cap)
-
-> **"If it ain't on the dashboard, did you even grind?"** This project is the vibe check for fitness data.
+# GrindGraph: Visualizing the Fitness Grind
 
 ## Project Overview
 
