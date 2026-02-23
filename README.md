@@ -1,14 +1,14 @@
-# ⚡ GrindGraph: Visualizing the Fitness Grind (No Cap)
+# GrindGraph: Visualizing the Fitness Grind (No Cap)
 
 > **"If it ain't on the dashboard, did you even grind?"** This project is the vibe check for fitness data.
 
-## Project Flex ✨
+## Project Overview
 
 **GrindGraph** isn't just an app; it's a deep dive into daily hustle data using **Python** and **Streamlit**. We took a raw FitBit dataset, merged a chaotic minute-by-minute sleep log, and delivered **actionable tea** on activity habits, sleep correlation, and calorie burns.
 
 It's **100% portfolio-ready**, showing skills in data wrangling, advanced EDA, and full-stack data deployment.
 
-| 🌐 Live Dashboard (It Slaps) | 🔗 GitHub Repo (You Are Here) |
+|  Live Dashboard (It Slaps) |  GitHub Repo (You Are Here) |
 | :--- | :--- |
 | **https://grindgraph.streamlit.app/** | **https://github.com/harshithreddy-dev/GrindGraph** |
 
@@ -18,7 +18,7 @@ It's **100% portfolio-ready**, showing skills in data wrangling, advanced EDA, a
 
 We kept the tech stack **clean and efficient** to maximize impact:
 
-| Category | Tools Used | Why It's the Goat 🐐 |
+| Category | Tools Used | Why It's the Goat  |
 | :--- | :--- | :--- |
 | **Data Engine** | `Python`, **Pandas**, `NumPy` | For merging those messy, mismatched CSVs and cleaning the data (iykyk). |
 | **Visualization** | **Plotly Express** | Because static charts are cringe. Plotly gives us those smooth, interactive, zoomable visuals. |
@@ -27,7 +27,7 @@ We kept the tech stack **clean and efficient** to maximize impact:
 
 ***
 
-## 📈 Key Insights & Visuals
+## Key Insights & Visuals
 
 The dashboard features **three primary interactive visualizations** designed to extract the most valuable insights:
 
@@ -45,7 +45,7 @@ The dashboard features **three primary interactive visualizations** designed to 
 
 ***
 
-## ⚙️ Get the Local Setup (Run It Back)
+## Get the Local Setup (Run It Back)
 
 Wanna clone it and run it on your own machine? It's simple:
 
@@ -77,12 +77,6 @@ Wanna clone it and run it on your own machine? It's simple:
     (The app will open automatically at `http://localhost:8501`).
 
 ***
-
-## ✍️ Author
-
-This project was built by:
-
-* **Harshith** – [Your LinkedIn Profile Link] – [Your Personal Website or Portfolio Link]
 
 **Thanks for checking out the GrindGraph! ✌️**
 
