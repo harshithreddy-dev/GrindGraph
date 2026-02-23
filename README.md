@@ -4,7 +4,6 @@
 
 **GrindGraph** isn't just an app; it's a deep dive into daily hustle data using **Python** and **Streamlit**. We took a raw FitBit dataset, merged a chaotic minute-by-minute sleep log, and delivered **actionable tea** on activity habits, sleep correlation, and calorie burns.
 
-It's **100% portfolio-ready**, showing skills in data wrangling, advanced EDA, and full-stack data deployment.
 
 |  Live Dashboard (It Slaps) |  GitHub Repo (You Are Here) |
 | :--- | :--- |
@@ -12,7 +11,7 @@ It's **100% portfolio-ready**, showing skills in data wrangling, advanced EDA, a
 
 ***
 
-##  The Stack (The Tools That Ate)
+##  The Stack
 
 We kept the tech stack **clean and efficient** to maximize impact:
 
