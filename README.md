@@ -14,7 +14,7 @@ It's **100% portfolio-ready**, showing skills in data wrangling, advanced EDA, a
 
 ***
 
-## 🛠️ The Stack (The Tools That Ate)
+##  The Stack (The Tools That Ate)
 
 We kept the tech stack **clean and efficient** to maximize impact:
 
