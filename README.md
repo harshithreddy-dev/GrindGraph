@@ -75,8 +75,3 @@ Wanna clone it and run it on your own machine? It's simple:
     (The app will open automatically at `http://localhost:8501`).
 
 ***
-
-**Thanks for checking out the GrindGraph! ✌️**
-
-If you're looking for an easy way to see how to create a README file, this video provides a good tutorial. [How to make a README.md file? Easiest way!](https://www.youtube.com/watch?v=mb9FJzkwmwg)
-http://googleusercontent.com/youtube_content/0
